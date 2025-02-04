@@ -1,8 +1,10 @@
 * {
   font-family: "Helvetica", sans-serif;
+  margin: 0;
 }
 
 .header{
+  margin: 10px;
   height: 48px;
   display: flex;
   justify-content: space-between;
@@ -11,7 +13,7 @@
 .header-brand {
   margin: 0;
   height: 100%;
-  font-size: 35px;
+  font-size: 34px;
   color: #003366;
   font-weight: 800;
 }
@@ -82,4 +84,30 @@ h1 {
 
 #learn-more-button:active {
   opacity: 60%;
+}
+
+.learn-more-section {
+  background-color: #001f3f;
+  padding: 20px;
+  margin: 0;
+  display: flex;
+}
+
+.learn-more-subsection {
+  flex-basis: 100%;
+}
+
+.learn-more-header {
+  color: white;
+  margin: 10px;
+  text-align: center;
+}
+
+.learn-more-description {
+  color: white;
+  margin: 10px;
+}
+
+.summary {
+  margin-top: 25px;
 }
