@@ -3,8 +3,8 @@
   margin: 0;
 }
 
-.header{
-  margin: 10px;
+.header {
+  margin: 20px;
   height: 48px;
   display: flex;
   justify-content: space-between;

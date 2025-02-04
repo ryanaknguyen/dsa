@@ -1,0 +1,113 @@
+* {
+  font-family: "Helvetica", sans-serif;
+  margin: 0;
+}
+
+.header {
+  margin: 20px;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-brand {
+  margin: 0;
+  height: 100%;
+  font-size: 34px;
+  color: #003366;
+  font-weight: 800;
+}
+
+.header-links {
+  height: 100%;
+}
+
+img {
+  max-height: 80%;
+  margin: 0 1px 0 1px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 60px;
+  text-wrap: balance;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  margin-top: 0;
+  font-size: 18px;
+  color: #003366;
+  padding: 0 20px;
+  font-weight: 500;
+}
+
+.hub-body {
+  margin: 50px;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+  margin: 12px;
+}
+
+.buttons {
+  text-align: center;
+}
+
+button {
+  padding: 15px;
+  font-size: 18px;
+  margin: 5px;
+  border: none;
+  background-color: #0059B3;
+  color: white;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+button:hover {
+  opacity: 80%;
+  cursor: pointer;
+}
+
+button:active {
+  opacity: 60%;
+}
+
+/* Add new CSS here */
+.home {
+  text-align: center;
+}
+
+#home-button {
+  padding:10px;
+  font-size: 18px;
+  margin: 0 20px;
+  border: none;
+  font-weight: 500;
+  border-radius: 5px;
+  background-color: lightgray;
+  color: black;
+}
+
+.footer {
+  padding: 20px;
+  background-color: #003366;
+  color: white;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.copyright {
+  display: grid;
+  align-items: center;
+}
+
+.footer-links {
+  max-height: 100%;
+}
