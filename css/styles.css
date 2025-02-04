@@ -12,7 +12,7 @@
   margin: 0;
   height: 100%;
   font-size: 35px;
-  color: #001f3f;
+  color: #003366;
   font-weight: 800;
 }
 
@@ -40,4 +40,46 @@ h1 {
   color: #003366;
   padding: 0 20px;
   font-weight: 500;
+}
+
+.title-action {
+  text-align: center;
+  margin: 50px;
+}
+
+#get-started-button {
+  padding: 15px;
+  font-size: 18px;
+  margin: 0 20px;
+  border: none;
+  background-color: #004080;
+  color: white;
+  font-weight: 500;
+}
+
+#get-started-button:hover {
+  opacity: 80%;
+  cursor: pointer;
+}
+
+#get-started-button:active {
+  opacity: 60%;
+}
+
+#learn-more-button {
+  padding: 15px;
+  font-size: 18px;
+  margin: 0 20px;
+  border: none;
+  background-color: white;
+  text-decoration: underline;
+}
+
+#learn-more-button:hover {
+  opacity: 80%;
+  cursor: pointer;
+}
+
+#learn-more-button:active {
+  opacity: 60%;
 }
