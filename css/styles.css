@@ -57,6 +57,7 @@ h1 {
   background-color: #004080;
   color: white;
   font-weight: 500;
+  border-radius: 5px;
 }
 
 #get-started-button:hover {
@@ -88,26 +89,43 @@ h1 {
 
 .learn-more-section {
   background-color: #001f3f;
-  padding: 20px;
+  padding: 50px;
   margin: 0;
-  display: flex;
-}
-
-.learn-more-subsection {
-  flex-basis: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 50px;
 }
 
 .learn-more-header {
   color: white;
-  margin: 10px;
   text-align: center;
+  margin: 12px;
 }
 
 .learn-more-description {
   color: white;
   margin: 10px;
+  font-weight: 300;
 }
 
 .summary {
-  margin-top: 25px;
+  margin-bottom: 25px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.learn-more-text {
+  padding: 0 50px;
+}
+
+.learn-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.description-img {
+  max-width: 100%; 
+  max-height: 300px;
 }
