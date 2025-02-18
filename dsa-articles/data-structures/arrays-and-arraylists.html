@@ -2,9 +2,9 @@
 
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Ryan's Guide to DSA</title>
-    <link rel="stylesheet" href="../../css/dsa-hub.css">
+    <link rel="stylesheet" href="../../css/data-structures-styles.css" />
   </head>
 
   <body>
@@ -12,27 +12,407 @@
       <p class="header-brand">RNCodes</p>
 
       <div class="header-links">
-        <a href="https://www.linkedin.com/in/ryanaknguyen/"><img src="../../img/linkedin-icon.png" alt="LinkedIn logo"></a>
-        <a href="https://github.com/ryanaknguyen"><img src="../../img/github-icon.png" alt="GitHub logo"></a>
-        <a href="mailto:ryanaknguyen@gmail.com"><img src="../../img/email-icon.png" alt="Email logo"></a>
+        <a href="https://www.linkedin.com/in/ryanaknguyen/"
+          ><img src="../../img/linkedin-icon.png" alt="LinkedIn logo"
+        /></a>
+        <a href="https://github.com/ryanaknguyen"
+          ><img src="../../img/github-icon.png" alt="GitHub logo"
+        /></a>
+        <a href="mailto:ryanaknguyen@gmail.com"
+          ><img src="../../img/email-icon.png" alt="Email logo"
+        /></a>
       </div>
     </div>
 
     <h1>Arrays and ArrayLists</h1>
-    <p class="subtitle">A page dedicated to the different data structures and algorithms for reference</p>
+    <p class="subtitle">
+      A data structure that allows storage of elements that are the same type
+    </p>
 
-    
-    <br>
-    <div class="home"><a href="../../dsa-hub.html"><button id="home-button">&lt; Back to Hub</button></a></div>
-    <br>
+    <div class="arrays-and-arraylists-info">
+      <p>
+        Arrays and ArrayLists are both data structures that allow you to store
+        different types of elements,
+        <strong>as long as they are the same type</strong>. Even though they
+        have similar functions, they are both unique in their own ways that
+        makes using one more advantageous compared to the other. Let's take a
+        closer look at the two data structures and see how they differ.
+      </p>
+      <br />
+
+      <h2>Array</h2>
+      <p>To define (create) an array in Java, the code is shown below:</p>
+      <pre>
+        <code>
+        type[] array = new type[number];
+
+        // Examples:
+        int[] numberArray = new int[10];           // Creates a new integer array of size 10
+        double[] doubleArray = new double[20];     // Creates a new double array of size 20
+        char[] charArray = new char[26];           // Creates a new character array of size 26
+        String[] stringArray = new String[100];    // Creates a new String array of size 100
+        </code>
+      </pre>
+      <p>
+        To initialize (defining with preset initial values) an array in Java,
+        the code is shown below:
+      </p>
+      <pre>
+        <code>
+        type[] initArray = new type[number] {element1, element2, ...};
+
+        // Examples:
+        int[] newNumArray = new int[5] {1, 2, 3, 4, 5};                   // Creates a new integer array with initial values 1-5
+        String[] newStringArray = new String[3] {"how", "are", "you"};    // Creates a new String array with "how", "are", and "you"
+        </code>
+      </pre>
+      <p>
+        A few things to note about array declarations and initializations of
+        arrays:
+      </p>
+      <ul>
+        <li>
+          The "type" of the array should be replaced with the desired type when
+          creating the array.
+          <strong>Types of arrays cannot be changed later.</strong>
+        </li>
+        <li>Types of an array can be...</li>
+        <ul>
+          <li>Primitive types (int, double, char, etc.)</li>
+          <li>Objects (String, custom defined objects, etc.)</li>
+        </ul>
+        <li>
+          An array cannot be two different types. In order to use more than one
+          type with an array, either multiple arrays must be made or an array
+          with a type with multiple fields can be used.
+        </li>
+        <li>
+          The "number" of the array should be replaced with the desired number
+          when creating the array.
+          <strong
+            >Once the number of the array is defined, it cannot be changed
+            later.</strong
+          >
+        </li>
+      </ul>
+      <br />
+      <p>
+        There are many different operations that can be performed with arrays.
+        Here are the most common operations performed using an array:
+      </p>
+      <ul>
+        <li>
+          <strong>Accessing an element:</strong>
+          To access an element inside an array, call the array name along with
+          the index number to retrieve it.
+          <ul>
+            <li>
+              <em
+                >Indexes start from 0 at the beginning of the array to 1 less
+                than the array size.</em
+              >
+            </li>
+          </ul>
+        </li>
+        <pre>
+          <code>
+          int[] access = new int[5] {1, 2, 3, 4, 5};    // Creates a new array [1, 2, 3, 4, 5]
+                                                        //             indexes: 0  1  2  3  4
+
+          int atZero = access[0];                       // Retrieves the element at index 0 (number 1)
+          int arThree = access[3];                      // Retrieves the element at index 3 (number 4)
+          </code>
+        </pre>
+        <li>
+          <strong>Replacing an element:</strong>
+          Elements in arrays can be replaced using its index, the same way they
+          are referenced to retrieve values.
+        </li>
+        <pre>
+          <code>
+          int[] anotherAccess = new int[5] {1, 2, 3, 4, 5};    // Creates a new array [1, 2, 3, 4, 5]
+
+          access[0] = 6;     // Sets element at index 0 to be 6 (previously 1)
+          access[4] = 10;    // Sets element at index 4 to be 10 (previously 5)
+
+          // New array will be [6, 2, 3, 4, 10]
+          </code>
+        </pre>
+        <li>
+          <strong>Traversing through an array:</strong>
+          To traverse through an array to retrieve all its values, a for-loop
+          can be used to do so. A for-each loop can also be used if we don't
+          care too much about the indexes to select certain values.
+        </li>
+        <pre>
+          <code>
+          int[] newAccess = new int[5] {1, 2, 3, 4, 5};    // Creates a new array [1, 2, 3, 4, 5]
+
+          // Using a for loop:
+          for (int i = 0; i &lt; newAccess.size; i++) {
+            System.out.print(newAccess[i]);              // Will print out "12345"
+          }
+
+          // Using a for-each loop:
+          for (int i : newAccess) {
+            System.out.print(i);                         // Will also print out "12345"
+          }
+          </code>
+        </pre>
+        <li>
+          <strong>Arrays class:</strong>
+          Arrays do not have predefined methods to use, but arrays do utilize
+          the
+          <a
+            href="https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html"
+            >Arrays class</a
+          >
+          that has some useful methods to use such as sorting and turning arrays
+          into Strings.
+        </li>
+      </ul>
+      <br />
+      <p>
+        There are many situations where arrays can be useful to use. However,
+        some aspects of arrays make using them more limited such as having to
+        know how much space to define and the lack of predefined methods that
+        make using arrays more challenging. To overcome those limitations, the
+        ArrayList can be used instead and will be explained in more detail
+        below.
+      </p>
+      <br />
+      <br />
+
+      <h2>ArrayList</h2>
+      <p>To define an ArrayList in Java, the code is shown below:</p>
+      <pre>
+        <code>
+        ArrayList&lt;type&gt; list1 = new Arraylist&lt;&gt;();
+        List&lt;type&gt; list2 = new Arraylist&lt;&gt;();
+
+        // Examples:
+        ArrayList&lt;Integer&gt; intList = new Arraylist&lt;&gt;();    // Creates a new Integer ArrayList
+        ArrayList&lt;Character&gt; list1 = new Arraylist&lt;&gt;();    // Creates a new Character ArrayList
+        List&lt;String&gt; list1 = new Arraylist&lt;&gt;();            // Creates a new String ArrayList
+        </code>
+      </pre>
+      <p>To initialize an ArrayList in Java, the code is shown below:</p>
+      <pre>
+        <code>
+          ArrayList&lt;type&gt; list2 = new Arraylist&lt;&gt;(Arrays.asList(element1, element2, ...));
+
+          // Example:
+          ArrayList&lt;String&gt; colors = new Arraylist&lt;&gt;(Arrays.asList("red", "blue", "yellow"));    // Creates predefined Strings
+        </code>
+      </pre>
+      <p>
+        A few things to note about array declarations and initializations of
+        ArrayLists:
+      </p>
+      <ul>
+        <li>
+          Unlike arrays, ArrayLists are dynamic structures which
+          <strong>allow them to resize</strong> whenever its internal array gets
+          full. This means that when initializing/declaring an ArrayList, we do
+          not need to know the size we need to define it.
+        </li>
+        <li>
+          The "type" of the ArrayList also needs to be consistent throughout its
+          entirety.
+          <strong
+            >Once a type has been defined for an ArrayList, it cannot be changed
+            later.</strong
+          >
+        </li>
+        <li>
+          The ArrayList inherits (shares) the List interface, which means that
+          its functions are the same as a general list. That means that a List
+          keyword can also be used to define an ArrayList, as shown in the
+          examples above.
+        </li>
+      </ul>
+      <br />
+      <p>
+        With ArrayLists, there are predefined functions that can be used to
+        utilize them for various situations. Here are the most common operations
+        performed with an ArrayList:
+      </p>
+      <ul>
+        <li>
+          <strong>Adding an element:</strong> Use the .add(E element) method to
+          add an entry to the ArrayList.
+        </li>
+        <pre>
+          <code>
+          ArrayList&lt;Integer&gt; listA = new ArrayList&lt;&gt;();   // Create a new Integer ArrayList
+
+          listA.add(1);          // Adds 1 to the ArrayList
+          listA.add(24);         // Adds 24 to the ArrayList
+          listA.add(373);        // Adds 373 to the ArrayList
+          listA.add("hello");    // Will throw an error for invalid type!  
+          </code>
+        </pre>
+        <li>
+          <strong>Getting an element:</strong> Use the .get(int index) method to
+          get an element at a certain index in the ArrayList.
+        </li>
+        <pre>
+          <code>
+          // Use the same ArrayList as above
+
+          int var1 = listA.get(0);    // Returns 1
+          int var2 = listA.add(1);    // Returns 24
+          int var3 = listA.add(2);    // Returns 373
+          int var4 = listA.add(3);    // Will throw an error for index out of bounds!  
+          </code>
+        </pre>
+        <li>
+          <strong>Setting an element:</strong> Use the .set(int index, E
+          element) method to set an element at a certain index in the ArrayList.
+        </li>
+        <pre>
+          <code>
+          // Use the same ArrayList as above
+
+          listA.set(0, 10);         // Sets the value at index 0 to 10
+          listA.set(1, 20);         // Sets the value at index 1 to 20
+          listA.set(2, 30);         // Sets the value at index 2 to 30
+          listA.set(3, "hello");    // Will throw an error for invalid type and out of bounds!  
+          </code>
+        </pre>
+        <li>
+          <strong>Removing an element:</strong> Use the .remove(int index)
+          method to remove an element at a certain index in the ArrayList.
+        </li>
+        <pre>
+          <code>
+          // Use the same ArrayList as above
+
+          listA.remove(1);    // Remove the value at index 1 (number 20)
+          listA.remove(0);    // Remove the value at index 0 (number 10)
+          listA.remove(3);    // Will throw an error for out of bounds!
+          </code>
+        </pre>
+        <li>
+          <strong>See if an ArrayList contains an element:</strong> Use the
+          .contains(E element) method to check if the ArrayList contains a
+          certain element.
+        </li>
+        <pre>
+          <code>
+          // Use the same ArrayList as above
+
+          boolean test1 = listA.contains(30);    // Returns true (30 is still in the ArrayList)
+          boolean test2 = listA.contains(20);    // Returns false (20 has been previously removed)
+          </code>
+        </pre>
+        <li>
+          <strong>Getting the size of the ArrayList:</strong> Use the .size()
+          method to return the size of the ArrayList.
+        </li>
+        <pre>
+          <code>
+          // Use the same ArrayList as above
+
+          int listSize = listA.size();    // Returns 1 (3 elements added, 2 deleted)
+          </code>
+        </pre>
+        <li>
+          <strong>Checking if the ArrayList is empty:</strong> Use the
+          .isEmpty() method to check if the ArrayList is empty.
+        </li>
+        <pre>
+          <code>
+          // Use the same ArrayList as above
+
+          boolean test3 = listA.isEmpty();               // Returns false (1 element is present)
+
+          ArrayList&lt;String&gt; listB = new ArrayList&lt;&gt;();   // Create a new String ArrayList
+          boolean test4 = listB.isEmpty();               // Returns true (no elements in it)
+          </code>
+        </pre>
+        <li>
+          <strong>Clearing the ArrayList:</strong> Use the .clear() method to
+          clear the entire ArrayList.
+        </li>
+        <pre>
+          <code>
+          // Use ArrayList listA as defined above 
+
+          listA.clear();    // Clears the entire ArrayList of all elements (now size 0 with nothing in it)
+          </code>
+        </pre>
+        <li>
+          <strong>Converting an ArrayList to an array:</strong> Use the
+          .toArray(type[] a) method to convert the ArrayList to the specified
+          array (where compatible).
+        </li>
+        <pre>
+          <code>
+          ArrayList&lt;String&gt; listC = new ArrayList&lt;&gt;(Arrays.asList("One", "Two", "Three"));   // Create a new Integer ArrayList
+
+          String newStringArray = listC.toArray(new String[3]);    // New String array made with the elements in the ArrayList
+          </code>
+        </pre>
+      </ul>
+      <br />
+
+      <p>
+        Compared to arrays, there are a lot more things that we can do with an
+        ArrayList that makes it more useful. ArrayLists are essentially
+        extensions of arrays that allow greater flexibility in terms of what we
+        can do with them. Let's compare the difference between the two:
+      </p>
+      <div class="dual-comparison">
+        <div>
+          <h3>Arrays</h3>
+          <br />
+          <ul>
+            <li>Used when the size of the array we want to use is known</li>
+            <li>No prebuilt methods other than that from the Arrays class</li>
+            <li>Size cannot be changed after declaration</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>ArrayLists</h3>
+          <br />
+          <ul>
+            <li>Used when the size of the array we want to use is NOT known</li>
+            <li>
+              Prebuilt methods that allow greater flexibility in terms of how we
+              can utilize arrays in our programs
+            </li>
+            <li>
+              Size can be changed based on elements added/removed from it
+              (dynamic resizing)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <div class="home">
+      <a href="../../dsa-hub.html"
+        ><button id="home-button">&lt; Back to Hub</button></a
+      >
+    </div>
+    <br />
 
     <div class="footer">
       <p class="copyright">© 2025 Ryan Nguyen</p>
 
       <div class="footer-links">
-        <a href="https://www.linkedin.com/in/ryanaknguyen/"><img src="../../img/linkedin-icon.png" alt="LinkedIn logo"></a>
-        <a href="https://github.com/ryanaknguyen"><img src="../../img/github-icon.png" alt="GitHub logo"></a>
-        <a href="mailto:ryanaknguyen@gmail.com"><img src="../../img/email-icon.png" alt="Email logo"></a>
+        <a href="https://www.linkedin.com/in/ryanaknguyen/"
+          ><img src="../../img/linkedin-icon.png" alt="LinkedIn logo"
+        /></a>
+        <a href="https://github.com/ryanaknguyen"
+          ><img src="../../img/github-icon.png" alt="GitHub logo"
+        /></a>
+        <a href="mailto:ryanaknguyen@gmail.com"
+          ><img src="../../img/email-icon.png" alt="Email logo"
+        /></a>
       </div>
     </div>
   </body>
